@@ -1,0 +1,21 @@
+{
+    "name": "liuyuanshan11/sd-micro-service-client",
+    "description": "sd-micro-service-client",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SdMicroServiceClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alan.Liu",
+            "email": "1019213039@qq.com",
+            "homepage":"https://github.com/liuyuanshan11/sd-micro-service-client"
+        }
+    ],
+    "minimum-stability": "dev"
+}
