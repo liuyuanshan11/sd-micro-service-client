@@ -16,5 +16,6 @@
             "email": "1019213039@qq.com",
             "homepage":"https://github.com/liuyuanshan11/sd-micro-service-client"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }

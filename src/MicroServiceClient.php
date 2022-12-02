@@ -3,18 +3,16 @@
 namespace SdMicroServiceClient;
 
 use SdMicroServiceClient\constants\ResponseCode;
-use function Couchbase\defaultDecoder;
 
 class MicroServiceClient
 {
 
-    protected $service_url;
-    protected $app_id;
-    protected $app_secret;
+    private $service_url;
+    private $app_id;
+    private $app_secret;
 
-    public function __constrct($serviceUrl, $appId, $appSecret)
+    public function __construct($serviceUrl, $appId, $appSecret)
     {
-        var_dump(123);exit;
         $this->service_url = $serviceUrl;
         $this->app_id = $appId;
         $this->app_secret = $appSecret;
@@ -22,31 +20,14 @@ class MicroServiceClient
 
     /**
      * @description 通过http的post请求node服务
-     * @param role 必选 string controller
-     * @param cmd 必选 string action
-     * @param params 必选 string 参数
-     * @return
+     * @return array
      * @remark 备注信息
      */
     public function act()
     {
-        if (!$this->isPost()) {
-            $ret = [
-                'code' => ResponseCode::ERROR_REQUEST_METHOD_ERROR['code'],
-                'message' => 'The ' . $_SERVER['REQUEST_METHOD'] . ' method is not supported for this route. Supported methods: POST.',
-                'data' => []
-            ];
-            echo json_encode($ret);
-        }
-
-        $data = file_get_contents('php://input');
-        print_r(urldecode($data));
-        exit;
-
-        $url = '';
         $postData = [
-            'appId' => '',
-            'appSecret' => ''
+            'appId' => $this->app_id,
+            'appSecret' => $this->app_secret
         ];
 
         $headers = array(
@@ -54,26 +35,7 @@ class MicroServiceClient
             "Accept: application/json"
         );
 
-        $ret = $this->httpRequest($url, $headers, json_encode($postData));
-        echo json_encode($ret);
-    }
-
-    /**
-     * 判断是否为post
-     * @return bool
-     */
-    protected function isPost()
-    {
-        return isset($_SERVER['REQUEST_METHOD']) && strtoupper($_SERVER['REQUEST_METHOD']) == 'POST';
-    }
-
-    /**
-     * 判断是否为get
-     * @return bool
-     */
-    protected function isGet()
-    {
-        return isset($_SERVER['REQUEST_METHOD']) && strtoupper($_SERVER['REQUEST_METHOD']) == 'GET';
+        return $this->httpRequest($this->service_url, $headers, $postData);
     }
 
     /**
