@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SdMicroServiceClient\\' => array($baseDir . '/src'),
+    'liuyuanshan11\\SdMicroServiceClient\\' => array($baseDir . '/src'),
 );

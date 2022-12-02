@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'SdMicroServiceClient\\MicroServiceClient' => $baseDir . '/src/MicroServiceClient.php',
-    'SdMicroServiceClient\\constants\\ResponseCode' => $baseDir . '/src/constants/ResponseCode.php',
+    'liuyuanshan11\\SdMicroServiceClient\\MicroServiceClient' => $baseDir . '/src/MicroServiceClient.php',
+    'liuyuanshan11\\SdMicroServiceClient\\constants\\ResponseCode' => $baseDir . '/src/constants/ResponseCode.php',
 );

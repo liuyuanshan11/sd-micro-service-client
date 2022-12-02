@@ -1,5 +1,5 @@
 <?php
-use SdMicroServiceClient\MicroServiceClient;
+use liuyuanshan11\SdMicroServiceClient\MicroServiceClient;
 
 include_once './vendor/autoload.php';
 

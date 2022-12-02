@@ -1,8 +1,8 @@
 <?php
 
-namespace SdMicroServiceClient;
+namespace liuyuanshan11\SdMicroServiceClient;
 
-use SdMicroServiceClient\constants\ResponseCode;
+use liuyuanshan11\SdMicroServiceClient\constants\ResponseCode;
 
 class MicroServiceClient
 {

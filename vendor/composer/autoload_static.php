@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit0764fc34d70a4b364fa2df188f574077
 {
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'l' => 
         array (
-            'SdMicroServiceClient\\' => 21,
+            'liuyuanshan11\\SdMicroServiceClient\\' => 35,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'SdMicroServiceClient\\' => 
+        'liuyuanshan11\\SdMicroServiceClient\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -22,8 +22,8 @@ class ComposerStaticInit0764fc34d70a4b364fa2df188f574077
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'SdMicroServiceClient\\MicroServiceClient' => __DIR__ . '/../..' . '/src/MicroServiceClient.php',
-        'SdMicroServiceClient\\constants\\ResponseCode' => __DIR__ . '/../..' . '/src/constants/ResponseCode.php',
+        'liuyuanshan11\\SdMicroServiceClient\\MicroServiceClient' => __DIR__ . '/../..' . '/src/MicroServiceClient.php',
+        'liuyuanshan11\\SdMicroServiceClient\\constants\\ResponseCode' => __DIR__ . '/../..' . '/src/constants/ResponseCode.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

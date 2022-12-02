@@ -1,6 +1,6 @@
 <?php
 
-namespace SdMicroServiceClient\constants;
+namespace liuyuanshan11\SdMicroServiceClient\constants;
 /**
  * 响应状态码定义类
  * Class ResponseCode.

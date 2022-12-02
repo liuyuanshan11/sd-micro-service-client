@@ -7,7 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SdMicroServiceClient\\": "src/"
+            "liuyuanshan11\\SdMicroServiceClient\\": "src/"
         }
     },
     "authors": [
