@@ -9,5 +9,5 @@ include_once './vendor/autoload.php';
  * $controller = organizations
  * $action = list
  */
-$obj  = new MicroServiceClient('192.168.102.11:11002','md5(appId+appSecret)');
+$obj  = new MicroServiceClient('192.168.102.11:11002','appId', 'appSecret');
 var_dump($obj->act('organizations','list',["key01"=>"value01"]));
