@@ -15,7 +15,7 @@ use liuyuanshan11\SdMicroServiceClient\MicroServiceClient;
      */
 public function index()
 {
-$obj = new MicroServiceClient('192.168.102.11:11002',2,3);
+$obj = new MicroServiceClient('192.168.102.11:11002','md5(appId+appSecret)');
 $obj->act('organizations','list',["key01"=>"value01"]);
 }
 ```

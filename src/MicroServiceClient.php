@@ -8,14 +8,12 @@ class MicroServiceClient
 {
 
     private $service_url;
-    private $app_id;
-    private $app_secret;
+    private $authorization;
 
-    public function __construct($serviceUrl, $appId, $appSecret)
+    public function __construct($serviceUrl, $Authorization)
     {
         $this->service_url = $serviceUrl;
-        $this->app_id = $appId;
-        $this->app_secret = $appSecret;
+        $this->authorization = $Authorization;
     }
 
     /**
@@ -31,8 +29,7 @@ class MicroServiceClient
         $headers = array(
             "Content-Type: application/json",
             "Accept: application/json",
-            "appId: " . $this->app_id,
-            "appSecret: " . $this->app_secret
+            "Authorization: " . $this->authorization
         );
 
         $url = $this->service_url . '/' . $controller . '/' . $action;
