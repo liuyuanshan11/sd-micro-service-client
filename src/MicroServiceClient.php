@@ -20,22 +20,24 @@ class MicroServiceClient
 
     /**
      * @description 通过http的post请求node服务
+     * @param controller string 控制器
+     * @param action string 方法
+     * @param params array 参数
      * @return array
      * @remark 备注信息
      */
-    public function act()
+    public function act($controller, $action, $params)
     {
-        $postData = [
-            'appId' => $this->app_id,
-            'appSecret' => $this->app_secret
-        ];
-
         $headers = array(
             "Content-Type: application/json",
-            "Accept: application/json"
+            "Accept: application/json",
+            "appId: " . $this->app_id,
+            "appSecret: " . $this->app_secret
         );
 
-        return $this->httpRequest($this->service_url, $headers, $postData);
+        $url = $this->service_url . '/' . $controller . '/' . $action;
+
+        return $this->httpRequest($url, $headers, json_encode($params));
     }
 
     /**
@@ -96,6 +98,6 @@ class MicroServiceClient
             $obj = json_decode(trim($output), true);
         }
 
-        return ['code' => ResponseCode::NO_ERROR['code'], 'message' => ResponseCode::NO_ERROR['message'], 'data' => $obj];
+        return $obj;
     }
 }
