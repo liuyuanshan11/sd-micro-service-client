@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'liuyuanshan11\\SdMicroServiceClient\\MicroService' => $baseDir . '/src/MicroService.php',
     'liuyuanshan11\\SdMicroServiceClient\\constants\\ResponseCode' => $baseDir . '/src/constants/ResponseCode.php',
+    'liuyuanshan11\\SdMicroServiceClient\\container\\Register' => $baseDir . '/src/container/Register.php',
     'liuyuanshan11\\SdMicroServiceClient\\http\\HttpClient' => $baseDir . '/src/http/HttpClient.php',
     'liuyuanshan11\\SdMicroServiceClient\\services\\HttpMicroServiceClient' => $baseDir . '/src/services/HttpMicroServiceClient.php',
 );

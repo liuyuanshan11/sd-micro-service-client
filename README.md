@@ -4,18 +4,16 @@ composer require liuyuanshan11/sd-micro-service-client
 ```
 ## 使用
 ```
-use liuyuanshan11\SdMicroServiceClient\MicroServiceClient;
+//最终实现：容器->对象（实例）->方法
+//$obj->organizations->act();
+$services = [
+    'queue' => 'https://queue-service.sumian.com',
+    'console' => 'https://console-service.sumian.com',
+    'organization' => 'https://organization-service.sumian.com',
+    'liu' => 'http://sdapi.test.top'
+];
 
-    /*
-     * $url = 192.168.102.11:11002/organizations/list
-     * $serviceUrl = 192.168.102.11:11002
-     * $controller = organizations
-     * $action = list
-     * $params = []
-     */
-public function index()
-{
-$obj = new MicroServiceClient('192.168.102.11:11002','appId', 'appSecret');
-$obj->act('organizations','list',["key01"=>"value01"]);
-}
+$obj = new MicroService('appId', 'appSecret', $services);
+var_dump($obj->get('console')->act('controller', 'action', ["key01" => "value01"]));
+var_dump($obj->get('queue')->act('c', 'getHeader', ["key01" => "value01"]));
 ```

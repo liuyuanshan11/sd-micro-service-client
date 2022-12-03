@@ -28,12 +28,6 @@ class HttpMicroServiceClient
      */
     public function act(string $controller, string $action, array $params = [])
     {
-        $headers = array(
-            "Content-Type: application/json; charset=utf-8",
-            "Accept: application/json",
-            "Authorization: " . md5($this->app_id . $this->app_secret)
-        );
-
         $url = $this->service_url . '/' . $controller . '/' . $action;
 
         $http_client = HttpClient::getInstance();
@@ -42,7 +36,7 @@ class HttpMicroServiceClient
             'Authorization' => md5($this->app_id . $this->app_secret)
         ];
 
-        $http_client->post('http://sdapi.test.top/c/test', $params, $header);
+        $http_client->post($url, $params, $header);
 
         //获取错误信息
         if ($http_client->getCode()) {
@@ -51,5 +45,15 @@ class HttpMicroServiceClient
 
         //返回响应请求内容
         return $http_client->getBody();
+    }
+
+    /**
+     * @var 清理垃圾
+     */
+    public function __destruct()
+    {
+        $this->service_url = null;
+        $this->app_id = null;
+        $this->app_secret = null;
     }
 }

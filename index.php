@@ -1,13 +1,19 @@
 <?php
-use liuyuanshan11\SdMicroServiceClient\services\HttpMicroServiceClient;
+
+use liuyuanshan11\SdMicroServiceClient\MicroService;
 
 include_once './vendor/autoload.php';
 
-/*
- * $url = 192.168.102.11:11002/organizations/list
- * $serviceUrl = 192.168.102.11:11002
- * $controller = organizations
- * $action = list
- */
-$obj  = new HttpMicroServiceClient('192.168.102.11:11002','appId', 'appSecret');
-var_dump($obj->act('organizations','list',["key01"=>"value01","key02"=>"value02"]));
+
+//最终实现：容器->对象（实例）->方法
+//$obj->organizations->act();
+$services = [
+    'queue' => 'https://queue-service.sumian.com',
+    'console' => 'https://console-service.sumian.com',
+    'organization' => 'https://organization-service.sumian.com',
+    'liu' => 'http://sdapi.test.top'
+];
+
+$obj = new MicroService('appId', 'appSecret', $services);
+var_dump($obj->get('console')->act('controller', 'action', ["key01" => "value01"]));
+var_dump($obj->get('queue')->act('c', 'getHeader', ["key01" => "value01"]));
