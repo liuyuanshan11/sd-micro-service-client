@@ -24,7 +24,6 @@ class ComposerStaticInit0764fc34d70a4b364fa2df188f574077
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'liuyuanshan11\\SdMicroServiceClient\\MicroService' => __DIR__ . '/../..' . '/src/MicroService.php',
         'liuyuanshan11\\SdMicroServiceClient\\constants\\ResponseCode' => __DIR__ . '/../..' . '/src/constants/ResponseCode.php',
-        'liuyuanshan11\\SdMicroServiceClient\\container\\Register' => __DIR__ . '/../..' . '/src/container/Register.php',
         'liuyuanshan11\\SdMicroServiceClient\\http\\HttpClient' => __DIR__ . '/../..' . '/src/http/HttpClient.php',
         'liuyuanshan11\\SdMicroServiceClient\\services\\HttpMicroServiceClient' => __DIR__ . '/../..' . '/src/services/HttpMicroServiceClient.php',
     );

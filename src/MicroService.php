@@ -3,6 +3,7 @@
 namespace liuyuanshan11\SdMicroServiceClient;
 
 use liuyuanshan11\SdMicroServiceClient\services\HttpMicroServiceClient;
+use liuyuanshan11\SdMicroServiceClient\constants\ResponseCode;
 
 class MicroService
 {
@@ -47,7 +48,7 @@ class MicroService
     {
         $arr = [];
         foreach ($this->bind as $val) {
-            if ($services[$val]) {
+            if (isset($services[$val]) && !empty($services[$val])) {
                 $arr[$val] = $services[$val];
             }
         }
@@ -59,7 +60,8 @@ class MicroService
     {
         //已经创建好的对象，挂载到某个全局可以使用的数组上，在需要使用的时候，直接从该诉数组上获取即可
         if (isset(static::$objects[$key])) {
-            throw new \Exception('该类已注册');
+            return ResponseCode::ERROR_CLASS_REGISTERED;
+            //throw new \Exception('该类已注册');
         }
         static::$objects[$key] = $obj;
         return true;
@@ -70,7 +72,8 @@ class MicroService
     public static function get($key)
     {
         if (!isset(static::$objects[$key])) {
-            throw new \Exception('该类未注册');
+            return ResponseCode::ERROR_CLASS_UNREGISTERED;
+            //throw new \Exception('该类未注册');
         }
         return static::$objects[$key];
     }

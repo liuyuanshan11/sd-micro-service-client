@@ -15,4 +15,9 @@ class ResponseCode
     const ERROR_NOT_FOUND_ERROR = ['code' => '404', 'message' => 'Not found'];
     const ERROR_REQUEST_METHOD_ERROR = ['code' => '405', 'message' => 'Method not allowed'];
     const ERROR_SERVER_UNAVAILABLE_ERROR = ['code' => '500', 'message' => 'HTTP internal server error'];
+
+    //系统错误码
+    const ERROR_CLASS_REGISTERED = ['code' => '10001', 'message' => '
+This class has been registered'];
+    const ERROR_CLASS_UNREGISTERED = ['code' => '10002', 'message' => 'This class is not registered'];
 }
