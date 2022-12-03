@@ -22,8 +22,9 @@ class ComposerStaticInit0764fc34d70a4b364fa2df188f574077
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'liuyuanshan11\\SdMicroServiceClient\\MicroServiceClient' => __DIR__ . '/../..' . '/src/MicroServiceClient.php',
         'liuyuanshan11\\SdMicroServiceClient\\constants\\ResponseCode' => __DIR__ . '/../..' . '/src/constants/ResponseCode.php',
+        'liuyuanshan11\\SdMicroServiceClient\\http\\HttpClient' => __DIR__ . '/../..' . '/src/http/HttpClient.php',
+        'liuyuanshan11\\SdMicroServiceClient\\services\\HttpMicroServiceClient' => __DIR__ . '/../..' . '/src/services/HttpMicroServiceClient.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,5 +1,5 @@
 <?php
-use liuyuanshan11\SdMicroServiceClient\MicroServiceClient;
+use liuyuanshan11\SdMicroServiceClient\services\HttpMicroServiceClient;
 
 include_once './vendor/autoload.php';
 
@@ -9,5 +9,5 @@ include_once './vendor/autoload.php';
  * $controller = organizations
  * $action = list
  */
-$obj  = new MicroServiceClient('192.168.102.11:11002','appId', 'appSecret');
-var_dump($obj->act('organizations','list',["key01"=>"value01"]));
+$obj  = new HttpMicroServiceClient('192.168.102.11:11002','appId', 'appSecret');
+var_dump($obj->act('organizations','list',["key01"=>"value01","key02"=>"value02"]));

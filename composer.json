@@ -3,7 +3,8 @@
     "description": "sd-micro-service-client",
     "homepage":"https://github.com/liuyuanshan11/sd-micro-service-client",
     "require": {
-        "php":">=5.6.0"
+        "php":">=7.0",
+      "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
