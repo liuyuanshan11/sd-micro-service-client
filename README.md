@@ -18,3 +18,6 @@ $services = [
         $obj = new MicroService('appId', 'appSecret', $services);
         var_dump($obj->get('console')->act('controller', 'action', ["key01" => "value01"]));
 ```
+## CBTI微服务开放接口
+
+[速眠微服务开放接口API](http://console-dev-apidoc.sumian.tech/apis/service-open-api)
