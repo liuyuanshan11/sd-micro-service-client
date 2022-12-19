@@ -6,17 +6,15 @@ composer require liuyuanshan11/sd-micro-service-client
 ```
 use liuyuanshan11\SdMicroServiceClient\MicroService;
 
-//最终实现：容器->对象（实例）->方法
-//$obj->organizations->act();
 $services = [
-            'queue' => 'https://queue-service.sumian.com',
-            'console' => 'https://console-service.sumian.com',
-            'organization' => 'https://organization-service.sumian.com',
-            'liu' => 'http://sdapi.test.top'
-        ];
-
-        $obj = new MicroService('appId', 'appSecret', $services);
-        var_dump($obj->get('console')->act('controller', 'action', ["key01" => "value01"]));
+    'member' => 'https://member-service-dev.sumian.com',
+    'questionnaire' => 'https://questionnaire-service-dev.sumian.com',
+    'organization' => 'https://organization-service-dev.sumian.com',
+];
+        
+// 容器->服务（实例）->('模块', ‘方法’, '参数'): $micro->(service)->act(role, cmd, params)
+$micro = new MicroService('appId', 'appSecret', $services);
+$micro->get('member')->act('members', 'create', ["mobile" => "13200000000"]));
 ```
 ## CBTI微服务开放接口
 

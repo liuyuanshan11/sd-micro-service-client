@@ -33,7 +33,8 @@ class HttpMicroServiceClient
         $http_client = HttpClient::getInstance();
         $header = [
             'Content-Type' => 'application/json; charset=utf-8',
-            'Authorization' => md5($this->app_id . $this->app_secret)
+            'Authorization' => md5($this->app_id . $this->app_secret),
+            'App-Id' => $this->app_id
         ];
 
         $http_client->post($url, $params, $header);
